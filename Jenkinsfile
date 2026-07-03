@@ -12,20 +12,16 @@ pipeline {
     post {
         always {
             echo 'Pipeline completed'
+            echo 'I will always say Hello again!'
+            deleteDir()
         }
-    }
-}
-post { 
-            always { 
-                echo 'I will always say Hello again!'
-                deleteDir()
-            }
-            failure { 
-                echo 'I will run when pipeline is failed'
-            }
-            success { 
-                echo 'I will run when pipeline is success'
-            }
+
+        failure {
+            echo 'I will run when pipeline is failed'
+        }
+
+        success {
+            echo 'I will run when pipeline is success'
         }
     }
 }
