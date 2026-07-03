@@ -5,7 +5,7 @@ pipeline {
         stage('Print Greeting') {
             steps {
                 echo 'Hello Jenkins'
-                error'dont say
+                error("Forcing pipeline failure")
             }
         }
     }
